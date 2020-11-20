@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Header from "./header"
-import "./layout.css"
+import Header from "./header";
+import "./layout.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -35,24 +35,25 @@ const Layout = ({ children }) => {
         </Copyright>
       </Container>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1180px;
   padding: 0 1.0875rem 1.45rem;
-`
+  font-family: Lora, serif;
+`;
 
 const Copyright = styled.footer`
   margin: 20px 0 10px;
   bottom: 0;
   position: absolute;
   font-size: 14px;
-`
+`;
 
-export default Layout
+export default Layout;
