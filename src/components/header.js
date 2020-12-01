@@ -58,7 +58,7 @@ const NavItems = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  font-family: Karla;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
 `;
 
