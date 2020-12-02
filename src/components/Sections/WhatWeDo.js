@@ -1,44 +1,88 @@
-// import styled from "styled-components"
-// import { Link } from "gatsby"
-// import PropTypes from "prop-types"
-import React from "react"
-
-// main green: 	#04733c
-// black: #040404
-// light green: #045c40
-// dark green: #042420
-// navy: #040424
+import React from "react";
+import styled from "styled-components";
+import { theme } from "../../theme";
 
 const WhatWeDo = () => (
-  <div>
-    <h2>What We Do</h2>
-    <h4>Family Financial Management</h4>
-    <p>
-      For nearly three decades, Walsh Consulting founder, Timothy Walsh, has
-      served as Chief Financial Officer for Wenner Media while managing the
-      Wenner family office. Mr. Walsh is a trustee of the family trusts and was
-      a board member of the operating company. His wide- ranging experience
-      provides a unique perspective on the challenges and opportunities facing
-      wealthy families. Having recognized an essential need in the marketplace
-      for customized family financial management, Mr. Walsh developed Walsh
-      Consulting. An expert support team has been assembled to provide a full
-      suite of services.
-    </p>
-    <p>
-      Tailored to meet the diverse needs of each family client, Walsh Consulting
-      maintains close contact with attorneys, investment advisors, accoun-
-      tants, tax professionals, insur- ance agents, estate managers, architects,
-      aviation professionals, appraisal firms and more. Personalized service,
-      customized plans and a dedicated team guarantee satisfaction and peace of
-      mind.
-    </p>
-    <p>
-      Successful financial relationships require trust, confidence, loyalty and
-      confidentiality, exactly what you can expect from Walsh Consulting.
-      Advanced technology and superior security measures protect each client’s
-      information.
-    </p>
-  </div>
-)
+  <Wrapper id="what-we-do">
+    <Container>
+      <Heading>Family Financial Management</Heading>
+      <p>
+        Tailored to meet the diverse needs of each family client, Walsh
+        Consulting maintains close contact with attorneys, investment advisors,
+        accountants, tax professionals, insurance agents, estate managers,
+        architects, aviation professionals, appraisal firms and more.
+        Personalized service, customized plans and a dedicated team guarantee
+        satisfaction and peace of mind.
+      </p>
+      <p>
+        Successful financial relationships require trust, confidence, loyalty
+        and confidentiality, exactly what you can expect from Walsh Consulting.
+        Advanced technology and superior security measures protect each client’s
+        information.
+      </p>
+      <p>
+        For nearly three decades, Walsh Consulting founder, Timothy Walsh, has
+        served as Chief Financial Officer for Wenner Media while managing the
+        Wenner family office. Mr. Walsh is a trustee of the family trusts and
+        was a board member of the operating company. His wide-ranging experience
+        provides a unique perspective on the challenges and opportunities facing
+        wealthy families. Having recognized an essential need in the marketplace
+        for customized family financial management, Mr. Walsh developed Walsh
+        Consulting. An expert support team has been assembled to provide a full
+        suite of services.
+      </p>
+    </Container>
+    <Container>
+      <Heading>Services</Heading>
+      <Grid>
+        <GridBox>
+          <p>Bill payment, reporting & budgeting</p>
+          <p>Banking & cash management</p>
+          <p>Payroll processing</p>
+        </GridBox>
+        <GridBox>
+          <p>Income tax return preparation</p>
+          <p>Trust administration</p>
+          <p>
+            Coordination of estate planning, trusts, wills & investment
+            management
+          </p>
+        </GridBox>
+        <GridBox>
+          <p>Property, aviation & artwork management</p>
+          <p>Insurance administration</p>
+          <p>Data management & protection</p>
+        </GridBox>
+      </Grid>
+    </Container>
+  </Wrapper>
+);
 
-export default WhatWeDo
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 40px 1.0875rem 1.45rem;
+`;
+
+const Container = styled.div`
+  margin: 40px 0;
+`;
+
+const Heading = styled.h2`
+  font-family: Raleway;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+`;
+
+const GridBox = styled.div`
+  border: 6px solid ${theme.colors.primaryGreen};
+  padding: 20px;
+  font-weight: 600;
+  color: ${theme.colors.navy};
+`;
+
+export default WhatWeDo;

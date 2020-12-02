@@ -6,7 +6,7 @@ import whiteLogo from "../../images/logo-white.png";
 import compass from "../../images/compass.jpg";
 
 const Hero = () => (
-  <Wrapper>
+  <Wrapper id="hero">
     <WelcomeBanner>
       <LogoWrapper>
         <img src={whiteLogo} alt="walsh consulting logo" />
@@ -14,14 +14,18 @@ const Hero = () => (
     </WelcomeBanner>
     <TextWrapper>
       <Text>
-        Walsh Consulting LLC is a boutique, multi-family office specializing in
-        all aspects of family financial management.
+        A boutique, multi-family office specializing in all aspects of <br />
+        family financial management.
       </Text>
     </TextWrapper>
   </Wrapper>
 );
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 0 1.0875rem 1.45rem;
+`;
 
 const WelcomeBanner = styled.div`
   width: 100%;
@@ -29,7 +33,6 @@ const WelcomeBanner = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  //   filter: brightness(50%);
   height: 400px;
   margin: 60px 0 0;
   display: flex;
@@ -46,6 +49,10 @@ const TextWrapper = styled.div`
   width: 60%;
   position: relative;
   margin: -40px auto 0;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
 `;
 
 const Text = styled.div`

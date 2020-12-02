@@ -1,20 +1,22 @@
-// import styled from "styled-components"
-// import { Link } from "gatsby"
-// import PropTypes from "prop-types"
 import React from "react";
-
-// main green: 	#04733c
-// black: #040404
-// light green: #045c40
-// dark green: #042420
-// navy: #040424
+import styled from "styled-components";
 
 const Contact = () => (
-  <div>
-    <h2>Contact Us</h2>
+  <Wrapper id="contact-us">
+    <Heading>Contact Us</Heading>
     <p>Timwalsh@walshconsultingLLC.com</p>
     <p>917-304-2597</p>
-  </div>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  margin: 40px auto;
+  max-width: 1180px;
+  padding: 40px 1.0875rem 1.45rem;
+`;
+
+const Heading = styled.h2`
+  font-family: Raleway;
+`;
 
 export default Contact;

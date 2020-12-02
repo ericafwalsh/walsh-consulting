@@ -4,17 +4,23 @@ import PropTypes from "prop-types";
 import React from "react";
 import { theme } from "../theme";
 
+import { scrollTo } from "../components/utils/scroll";
+
 const Header = ({ siteTitle }) => (
   <NavBar>
     <Wrapper>
       <Name>
-        <SLink to="/">{siteTitle}</SLink>
+        <SLink to="/" onClick={() => scrollTo("hero")}>
+          {siteTitle}
+        </SLink>
       </Name>
       <NavItems>
-        <NavItem>What We Do</NavItem>
-        <NavItem>Meet the Team</NavItem>
-        <NavItem>Testimonials</NavItem>
-        <NavItem>Contact Us</NavItem>
+        <NavItem onClick={() => scrollTo("what-we-do")}>What We Do</NavItem>
+        <NavItem onClick={() => scrollTo("meet-the-team")}>
+          Meet the Team
+        </NavItem>
+        <NavItem onClick={() => scrollTo("testimonials")}>Testimonials</NavItem>
+        <NavItem onClick={() => scrollTo("contact-us")}>Contact Us</NavItem>
       </NavItems>
     </Wrapper>
   </NavBar>
@@ -31,6 +37,10 @@ Header.defaultProps = {
 const NavBar = styled.header`
   margin-bottom: 1.45rem;
   border-bottom: 2px solid ${theme.colors.navy};
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
 `;
 
 const Wrapper = styled.div`
@@ -66,6 +76,7 @@ const NavItem = styled.div`
   color: #040404;
   padding-left: 20px;
   flex-wrap: nowrap;
+  cursor: pointer;
 `;
 
 export default Header;

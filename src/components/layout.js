@@ -29,10 +29,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Container>
         <main>{children}</main>
-        <Copyright style={{}}>
-          © {new Date().getFullYear()}, Walsh Consulting, LLC. All rights
-          reserved.
-        </Copyright>
       </Container>
     </>
   );
@@ -43,17 +39,7 @@ Layout.propTypes = {
 };
 
 const Container = styled.div`
-  margin: 0 auto;
-  max-width: 1180px;
-  padding: 0 1.0875rem 1.45rem;
   font-family: Lora, serif;
-`;
-
-const Copyright = styled.footer`
-  margin: 20px 0 10px;
-  bottom: 0;
-  position: absolute;
-  font-size: 14px;
 `;
 
 export default Layout;
