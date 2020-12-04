@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { theme } from "../../theme";
 
 import TWHeadshot from "../../images/TW_headshot.jpg";
 import LIHeadshot from "../../images/LI_headshot.jpg";
@@ -11,9 +12,7 @@ const AboutUs = () => (
     <BioWrapper>
       <SubHeading>Timothy Walsh, Founder and CEO</SubHeading>
       <Container>
-        <ImgContainer>
-          <img src={TWHeadshot} alt="Timothy Walsh" />
-        </ImgContainer>
+        <ImgContainer pictureUrl={TWHeadshot} />
         <TextContainer>
           <p>
             For nearly three decades, Walsh Consulting founder, Timothy Walsh,
@@ -33,17 +32,15 @@ const AboutUs = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            Full CV available for download
+            Download CV
           </Link>
         </TextContainer>
       </Container>
     </BioWrapper>
     <BioWrapper>
-      <SubHeading>Lana Izakson, ROLE</SubHeading>
+      <SubHeading>Lana Izakson, Tax Director</SubHeading>
       <Container>
-        <ImgContainer>
-          <img src={LIHeadshot} alt="Lana Izakson" />
-        </ImgContainer>
+        <ImgContainer pictureUrl={LIHeadshot} />
         <TextContainer>
           <p>
             Lana is a CPA with more than 20 years of experience in providing tax
@@ -58,11 +55,9 @@ const AboutUs = () => (
       </Container>
     </BioWrapper>
     <BioWrapper>
-      <SubHeading>Melissa Laccitiello, ROLE</SubHeading>
+      <SubHeading>Melissa Laccitiello, Bookkeeper</SubHeading>
       <Container>
-        <ImgContainer>
-          <img src={MLHeadshot} alt="Melissa Laccitiello" />
-        </ImgContainer>
+        <ImgContainer pictureUrl={MLHeadshot} />
         <TextContainer>
           <p>
             Melissa Laccitiello is a seasoned Executive Assistant with over 24
@@ -111,14 +106,25 @@ const TextContainer = styled.div`
 `;
 
 const ImgContainer = styled.div`
-  max-width: 260px;
-  margin-right: 40px;
+  min-width: 248px;
+  height: 212px;
+  background-image: url(${(props) => props.pictureUrl});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
+  border: 6px solid ${theme.colors.primaryGreen};
+  margin-right: 40px;
+  border-radius: 2px;
 `;
 
 const Link = styled.a`
   text-decoration: underline;
   cursor: pointer;
+  color: black;
+  &:hover {
+    color: ${theme.colors.primaryGreen};
+  }
 `;
 
 export default AboutUs;

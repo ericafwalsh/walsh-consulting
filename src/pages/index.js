@@ -21,22 +21,12 @@ const IndexPage = () => (
       <Testimonials />
     </Section>
     <Contact />
-    {/* <Copyright>
-      © {new Date().getFullYear()}, Walsh Consulting, LLC. All rights reserved.
-    </Copyright> */}
   </Layout>
 );
 
 const Section = styled.div`
   background-color: rgb(242, 242, 243);
   margin: 40px auto;
-`;
-
-const Copyright = styled.footer`
-  margin: 20px 0 10px;
-  bottom: 0;
-  position: absolute;
-  font-size: 14px;
 `;
 
 export default IndexPage;
