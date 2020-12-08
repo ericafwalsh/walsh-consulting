@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../theme";
 
 const Contact = () => (
   <Wrapper id="contact-us">
@@ -7,7 +8,7 @@ const Contact = () => (
     <Container>
       <ContactInfo>Timwalsh@walshconsultingLLC.com</ContactInfo>
       <Dot>&#8226;</Dot>
-      <ContactInfo>917-304-2597</ContactInfo>
+      <ContactInfo>(917) 304-2597</ContactInfo>
       <Dot>&#8226;</Dot>
       <ContactInfo>
         © {new Date().getFullYear()}, Walsh Consulting, LLC. All rights
@@ -33,14 +34,28 @@ const Container = styled.div`
   display: flex;
   font-size: 14px;
   justify-content: center;
+  flex-direction: column;
+
+  @media ${device.tablet} {
+    flex-direction: row;
+  }
 `;
 
 const ContactInfo = styled.div`
-  margin: 0 10px;
+  margin: 6px auto 0;
+
+  @media ${device.tablet} {
+    margin: 0 10px;
+  }
 `;
 
 const Dot = styled(ContactInfo)`
   color: #ddd;
+  display: none;
+
+  @media ${device.tablet} {
+    display: block;
+  }
 `;
 
 export default Contact;

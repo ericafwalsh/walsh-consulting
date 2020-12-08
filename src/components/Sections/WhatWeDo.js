@@ -1,6 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../theme";
+import { theme, device } from "../../theme";
+
+const services = [
+  "Bill payment, reporting & budgeting",
+  "Banking & cash management",
+  "Payroll processing",
+  "Income tax return preparation",
+  "Trust administration",
+  "Coordination of estate planning, trusts, wills & investment management",
+  "Property, aviation & artwork management",
+  "Insurance administration",
+  "Data management & protection",
+];
 
 const WhatWeDo = () => (
   <Wrapper id="what-we-do">
@@ -54,6 +66,15 @@ const WhatWeDo = () => (
           <p>Data management & protection</p>
         </GridBox>
       </Grid>
+      <MobileBox>
+        <GridBox>
+          <ul>
+            {services.map((item) => {
+              return <li>{item}</li>;
+            })}
+          </ul>
+        </GridBox>
+      </MobileBox>
     </Container>
   </Wrapper>
 );
@@ -61,7 +82,11 @@ const WhatWeDo = () => (
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 1180px;
-  padding: 40px 1.0875rem 1.45rem;
+  padding: 10px 1.0875rem 1.45rem;
+
+  @media ${device.mobileL} {
+    padding: 40px 1.0875rem 1.45rem;
+  }
 `;
 
 const Container = styled.div`
@@ -73,9 +98,13 @@ const Heading = styled.h2`
 `;
 
 const Grid = styled.div`
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 40px;
+
+  @media ${device.tablet} {
+    display: grid;
+  }
 `;
 
 const GridBox = styled.div`
@@ -83,6 +112,13 @@ const GridBox = styled.div`
   padding: 20px;
   font-weight: 600;
   color: ${theme.colors.navy};
+`;
+
+const MobileBox = styled.div`
+  display: flex;
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 export default WhatWeDo;

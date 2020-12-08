@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../theme";
+import { theme, device } from "../../theme";
 
 import whiteLogo from "../../images/logo-white.png";
 import compass from "../../images/compass.jpg";
@@ -59,9 +59,13 @@ const Text = styled.div`
   color: white;
   font-weight: 600;
   margin: 0 20px 20px;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
   font-family: Raleway;
+
+  @media ${device.mobileL} {
+    padding: 20px;
+  }
 `;
 
 export default Hero;

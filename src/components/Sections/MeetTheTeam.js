@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../theme";
+import { theme, device } from "../../theme";
 
 import TWHeadshot from "../../images/TW_headshot.jpg";
 import LIHeadshot from "../../images/LI_headshot.jpg";
 import MLHeadshot from "../../images/ML_headshot.jpg";
+import CCHeadshot from "../../images/CC_headshot.jpg";
 
 const AboutUs = () => (
   <Wrapper id="meet-the-team">
@@ -55,6 +56,21 @@ const AboutUs = () => (
       </Container>
     </BioWrapper>
     <BioWrapper>
+      <SubHeading>Chris Caci, Accounting Manager</SubHeading>
+      <Container>
+        <ImgContainer pictureUrl={CCHeadshot} />
+        <TextContainer>
+          <p>
+            Chris is an accounting professional with experience in financial
+            operations for small to mid-sized companies. Over the course of her
+            career she had held positions at large international accounting
+            firms and growing startups, in addition to beginning her own
+            advisory business.
+          </p>
+        </TextContainer>
+      </Container>
+    </BioWrapper>
+    <BioWrapper>
       <SubHeading>Melissa Laccitiello, Bookkeeper</SubHeading>
       <Container>
         <ImgContainer pictureUrl={MLHeadshot} />
@@ -96,8 +112,12 @@ const BioWrapper = styled.div`
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+
+  @media ${device.tablet} {
+    flex-direction: row;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -114,8 +134,11 @@ const ImgContainer = styled.div`
   background-repeat: no-repeat;
   overflow: hidden;
   border: 6px solid ${theme.colors.primaryGreen};
-  margin-right: 40px;
+  margin: 0 auto 20px;
   border-radius: 2px;
+  @media ${device.tablet} {
+    margin: 0 40px 0 0;
+  }
 `;
 
 const Link = styled.a`
