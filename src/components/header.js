@@ -18,10 +18,18 @@ const renderHamburgerIcon = () => {
 const renderNavItems = () => {
   return (
     <>
-      <NavItem onClick={() => scrollTo("what-we-do")}>What We Do</NavItem>
-      <NavItem onClick={() => scrollTo("meet-the-team")}>Meet the Team</NavItem>
-      <NavItem onClick={() => scrollTo("testimonials")}>Testimonials</NavItem>
-      <NavItem onClick={() => scrollTo("contact-us")}>Contact Us</NavItem>
+      <NavItem onClick={() => scrollTo("what-we-do", "center", true, 95)}>
+        What We Do
+      </NavItem>
+      <NavItem onClick={() => scrollTo("meet-the-team", "center", true, 110)}>
+        Meet the Team
+      </NavItem>
+      <NavItem onClick={() => scrollTo("testimonials", "center", true, 110)}>
+        Testimonials
+      </NavItem>
+      <NavItem onClick={() => scrollTo("contact-us", "center", true, 110)}>
+        Contact Us
+      </NavItem>
     </>
   );
 };
@@ -33,7 +41,7 @@ const Header = ({ siteTitle }) => {
     <NavBar>
       <Wrapper>
         <Name onClick={() => dropdownVisible && setDropdownVisible(false)}>
-          <SLink to="/" onClick={() => scrollTo("hero")}>
+          <SLink to="/" onClick={() => scrollTo("hero", "center", false)}>
             {siteTitle}
           </SLink>
         </Name>
@@ -58,12 +66,17 @@ Header.defaultProps = {
 };
 
 const NavBar = styled.header`
-  margin-bottom: 1.45rem;
+  margin-bottom: 20px;
   border-bottom: 2px solid ${theme.colors.navy};
   position: sticky;
   top: 0;
   background-color: white;
   z-index: 100;
+  height: 120px;
+
+  @media ${device.mobileM} {
+    height: 95px;
+  }
 `;
 
 const Wrapper = styled.div`

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../theme";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -26,7 +27,11 @@ const IndexPage = () => (
 
 const Section = styled.div`
   background-color: rgb(242, 242, 243);
-  margin: 40px auto;
+  margin: 10px auto;
+
+  @media ${device.tablet} {
+    margin: 40px auto;
+  }
 `;
 
 export default IndexPage;

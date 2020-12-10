@@ -1,8 +1,8 @@
 export const scrollTo = (
   elementId: string,
   position: ScrollLogicalPosition = "center",
-  offset: boolean = false,
-  offsetSize: number = 98
+  offset: boolean = true,
+  offsetSize: number = 110
 ) => {
   const el = document.getElementById(elementId);
 

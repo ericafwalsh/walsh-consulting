@@ -13,7 +13,7 @@ const Hero = () => (
       </LogoWrapper>
     </WelcomeBanner>
     <TextWrapper>
-      <Text>
+      <Text className="fade-in">
         A boutique, multi-family office specializing in all aspects of <br />
         family financial management.
       </Text>
@@ -24,7 +24,11 @@ const Hero = () => (
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 1180px;
-  padding: 0 1.0875rem 1.45rem;
+  padding: 0 1.0875rem 10px;
+
+  @media ${device.tablet} {
+    padding: 0 1.0875rem 1.45rem;
+  }
 `;
 
 const WelcomeBanner = styled.div`
@@ -52,7 +56,34 @@ const TextWrapper = styled.div`
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   -moz-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow: 3px 3px 5px 6px #ccc;
-}
+  .fade-in {
+      animation: fadeIn ease 2.5s;
+      -webkit-animation: fadeIn ease 2.5s;
+      -moz-animation: fadeIn ease 2.5s;
+      -o-animation: fadeIn ease 2.5s;
+      -ms-animation: fadeIn ease 2.5s;
+    }
+    @keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    @-moz-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    @-webkit-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    @-o-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    @-ms-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+  }
 `;
 
 const Text = styled.div`

@@ -20,9 +20,14 @@ const Contact = () => (
 );
 
 const Wrapper = styled.div`
-  margin: 40px auto;
+  margin: 20px auto 10px;
   max-width: 1180px;
-  padding: 40px 1.0875rem 20px;
+  padding: 10px 1.0875rem;
+
+  @media ${device.tablet} {
+    margin: 40px auto;
+    padding: 40px 1.0875rem 20px;
+  }
 `;
 
 const Divider = styled.div`

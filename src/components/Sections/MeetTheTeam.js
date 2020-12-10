@@ -6,6 +6,7 @@ import TWHeadshot from "../../images/TW_headshot.jpg";
 import LIHeadshot from "../../images/LI_headshot.jpg";
 import MLHeadshot from "../../images/ML_headshot.jpg";
 import CCHeadshot from "../../images/CC_headshot.jpg";
+import HMHeadshot from "../../images/HM_headshot.jpg";
 
 const AboutUs = () => (
   <Wrapper id="meet-the-team">
@@ -71,6 +72,30 @@ const AboutUs = () => (
       </Container>
     </BioWrapper>
     <BioWrapper>
+      <SubHeading>Holly MacKenzie, POSITION</SubHeading>
+      <Container>
+        <ImgContainer pictureUrl={HMHeadshot} />
+        <TextContainer>
+          <p></p>
+        </TextContainer>
+      </Container>
+    </BioWrapper>
+    <BioWrapper>
+      <SubHeading>Merrill Varchetti, Bookkeeper</SubHeading>
+      <Container>
+        {/* <ImgContainer pictureUrl={} /> */}
+        <TextContainer>
+          <p>
+            After 10 years as a stay at home mom, Merrill decided to re-enter
+            the workforce with Walsh Consulting in the fall of 2019. In her
+            spare time, she can be found on the tennis court or traveling back
+            and forth to numerous children’s sporting events including baseball,
+            football, basketball, tennis, and gymnastics.
+          </p>
+        </TextContainer>
+      </Container>
+    </BioWrapper>
+    <BioWrapper>
       <SubHeading>Melissa Laccitiello, Bookkeeper</SubHeading>
       <Container>
         <ImgContainer pictureUrl={MLHeadshot} />
@@ -89,13 +114,26 @@ const AboutUs = () => (
         </TextContainer>
       </Container>
     </BioWrapper>
+    <BioWrapper>
+      <SubHeading>Aimee Jeffries, POSITION</SubHeading>
+      <Container>
+        {/* <ImgContainer pictureUrl={} /> */}
+        <TextContainer>
+          <p></p>
+        </TextContainer>
+      </Container>
+    </BioWrapper>
   </Wrapper>
 );
 
 const Wrapper = styled.div`
-  margin: 40px auto;
+  margin: 0 auto;
   max-width: 1180px;
-  padding: 40px 1.0875rem 1.45rem;
+  padding: 10px 1.0875rem 1.45rem;
+
+  @media ${device.mobileL} {
+    padding: 40px 1.0875rem 1.45rem;
+  }
 `;
 
 const Heading = styled.h2`
@@ -104,10 +142,19 @@ const Heading = styled.h2`
 
 const SubHeading = styled.h4`
   font-family: Raleway;
+  text-align: center;
+
+  @media ${device.tablet} {
+    text-align: left;
+  }
 `;
 
 const BioWrapper = styled.div`
-  margin: 40px 0;
+  margin: 10px 0;
+
+  @media ${device.tablet} {
+    margin: 40px 0;
+  }
 `;
 
 const Container = styled.div`

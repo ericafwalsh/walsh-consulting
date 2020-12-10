@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../theme";
 
 const Testimonials = () => (
   <Wrapper id="testimonials">
@@ -31,9 +32,13 @@ const Testimonials = () => (
 );
 
 const Wrapper = styled.div`
-  margin: 40px auto;
+  margin: 20px auto;
   max-width: 1180px;
   padding: 40px 1.0875rem 1.45rem;
+
+  @media ${device.tablet} {
+    margin: 40px auto;
+  }
 `;
 
 const Heading = styled.h2`
