@@ -53,9 +53,9 @@ const TextWrapper = styled.div`
   width: 60%;
   position: relative;
   margin: -40px auto 0;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  -moz-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+  -moz-box-shadow: 1px 1px 2px 3px #ccc;
+  box-shadow: 1px 1px 2px 3px #ccc;
   .fade-in {
       animation: fadeIn ease 2.5s;
       -webkit-animation: fadeIn ease 2.5s;
@@ -83,6 +83,10 @@ const TextWrapper = styled.div`
       0% {opacity:0;}
       100% {opacity:1;}
     }
+  }
+  width: 90%;
+  @media ${device.mobileL} {
+    width: 60%;
   }
 `;
 

@@ -6,7 +6,7 @@ const Contact = () => (
   <Wrapper id="contact-us">
     <Divider />
     <Container>
-      <ContactInfo>Timwalsh@walshconsultingLLC.com</ContactInfo>
+      <ContactInfo>Tim@walsh.consulting</ContactInfo>
       <Dot>&#8226;</Dot>
       <ContactInfo>(917) 304-2597</ContactInfo>
       <Dot>&#8226;</Dot>

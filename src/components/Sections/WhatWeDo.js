@@ -1,80 +1,132 @@
 import React from "react";
 import styled from "styled-components";
 import { theme, device } from "../../theme";
+import meetingPhoto from "../../images/meeting_photo.jpg";
 
 const services = [
-  "Bill payment, reporting & budgeting",
-  "Banking & cash management",
-  "Payroll processing",
-  "Income tax return preparation",
-  "Trust administration",
-  "Coordination of estate planning, trusts, wills & investment management",
-  "Property, aviation & artwork management",
-  "Insurance administration",
-  "Data management & protection",
+  {
+    title: "Bill Payment, Reporting & Budgeting",
+    description: [
+      "Process all invoices",
+      "Review cash inflows and outflows",
+      "Account for all your spending",
+      "Generate quarterly spending reports to determine if your spending is in line with projections and if changes are needed",
+    ],
+  },
+  {
+    title: "Banking & Cash Management",
+    description: [
+      "Open and close accounts",
+      "Transfer funds between accounts",
+      "Reconcile accounts at month-end",
+      "Review cash inflows and outflows",
+    ],
+  },
+  {
+    title: "Payroll Processing",
+    description: [
+      "Process payroll for your staff",
+      "Purchase unemployment, disability and paid family leave insurance",
+      "Maintain all employment documents",
+      "Work with an outsource provider to ensure you comply with all employment laws",
+    ],
+  },
+  {
+    title: "Income Tax Preparation",
+    description: [
+      "Prepare individual income tax returns",
+      "Calculate quarterly estimated payments",
+      "Manage tax audits",
+      "Respond to all tax notices",
+    ],
+  },
+  {
+    title: "Coordination of Estate Planning, Wills, Trusts",
+    description: [
+      "Work with our estate attorneys to ensure that your will and estate plans are in order",
+      "Ensure all tax exemptions are utilized",
+      "Verify state tax is minimized",
+      "Confirm trust provisions are complied with",
+      "Ensure that you understand and are comfortable with your distribution of assets",
+    ],
+  },
+  {
+    title: "Investment Management",
+    description: [
+      "Review investment recommendations",
+      "Complete investment documents",
+      "Report to you quarterly",
+      "Assist with selection of investment advisors, if needed",
+    ],
+  },
+  {
+    title: "Property, Aviation, Artwork Management",
+    description: [
+      "Maintain a database of your artwork",
+      "Have the collection appraised periodically",
+      "Review all contracts",
+      "Maintain automobile schedules to ensure that all autos are properly insured, inspected and registered",
+      "Assist with booking charter flights, purchasing automobiles, boats, etc.",
+    ],
+  },
+  {
+    title: "Insurance Administration",
+    description: [
+      "Verify that you are properly insured for your homes, artwork, furnishings, autos and excess liability",
+      "Make sure all new items are added to the policies",
+      "Coordinate insurance company inspections",
+      "Bid out the policies periodically",
+    ],
+  },
+  {
+    title: "Data Management & Protection",
+    description: [
+      "Maintain your documents in a secure, cloud-based environment (i.e., wills, trusts, contracts, entity organizational documents, passports, personal ID’s) ",
+      "Maintain logins for all investments, insurance, utilities, banking, credit cards, etc. in a fully encrypted password management system",
+    ],
+  },
 ];
 
 const WhatWeDo = () => (
   <Wrapper id="what-we-do">
-    <Container>
-      <Heading>Family Financial Management</Heading>
-      <p>
-        Tailored to meet the diverse needs of each family client, Walsh
-        Consulting maintains close contact with attorneys, investment advisors,
-        accountants, tax professionals, insurance agents, estate managers,
-        architects, aviation professionals, appraisal firms and more.
-        Personalized service, customized plans and a dedicated team guarantee
-        satisfaction and peace of mind.
-      </p>
-      <p>
-        Successful financial relationships require trust, confidence, loyalty
-        and confidentiality, exactly what you can expect from Walsh Consulting.
-        Advanced technology and superior security measures protect each client’s
-        information.
-      </p>
-      <p>
-        For nearly three decades, Walsh Consulting founder, Timothy Walsh, has
-        served as Chief Financial Officer for Wenner Media while managing the
-        Wenner family office. Mr. Walsh is a trustee of the family trusts and
-        was a board member of the operating company. His wide-ranging experience
-        provides a unique perspective on the challenges and opportunities facing
-        wealthy families. Having recognized an essential need in the marketplace
-        for customized family financial management, Mr. Walsh developed Walsh
-        Consulting. An expert support team has been assembled to provide a full
-        suite of services.
-      </p>
-    </Container>
+    <TopContainer>
+      <TextContainer>
+        <Heading>Family Financial Management</Heading>
+        <p>
+          Tailored to meet the diverse needs of each family client, Walsh
+          Consulting maintains close contact with attorneys, investment
+          advisors, accountants, tax professionals, insurance agents, estate
+          managers, architects, aviation professionals, appraisal firms and
+          more. Personalized service, customized plans and a dedicated team
+          guarantee satisfaction and peace of mind.
+        </p>
+        <p>
+          Successful financial relationships require trust, confidence, loyalty
+          and confidentiality, exactly what you can expect from Walsh
+          Consulting. Advanced technology and superior security measures protect
+          each client’s information.
+        </p>
+        <InlineImage src={meetingPhoto} alt="stock photo of business meeting" />
+        <p>
+          <b>
+            Walsh Consulting Founder and Chief Executive Officer Timothy Walsh
+          </b>{" "}
+          is an accomplished financial executive in the media industry with more
+          than 25 years of experience working for privately held Wenner Media.
+          Mr. Walsh has also managed the Wenner Family Office since 2000. He
+          served as the company’s Chief Financial Officer, Vice President,
+          Treasurer and Board Member of Rolling Stone Magazine. Prior to that,
+          he was Wenner Media’s Vice President of Tax and Finance (2004-14). He
+          began his career with Wenner Media as Tax Director (1991).
+        </p>
+      </TextContainer>
+      <Image src={meetingPhoto} alt="stock photo of business meeting" />
+    </TopContainer>
     <Container>
       <Heading>Services</Heading>
-      <Grid>
-        <GridBox>
-          <p>Bill payment, reporting & budgeting</p>
-          <p>Banking & cash management</p>
-          <p>Payroll processing</p>
-        </GridBox>
-        <GridBox>
-          <p>Income tax return preparation</p>
-          <p>Trust administration</p>
-          <p>
-            Coordination of estate planning, trusts, wills & investment
-            management
-          </p>
-        </GridBox>
-        <GridBox>
-          <p>Property, aviation & artwork management</p>
-          <p>Insurance administration</p>
-          <p>Data management & protection</p>
-        </GridBox>
-      </Grid>
-      <MobileBox>
-        <GridBox>
-          <ul>
-            {services.map((item) => {
-              return <li>{item}</li>;
-            })}
-          </ul>
-        </GridBox>
-      </MobileBox>
+      {services.map((item) => {
+        return <ServiceItem>{item.title}</ServiceItem>;
+      })}
     </Container>
   </Wrapper>
 );
@@ -85,8 +137,18 @@ const Wrapper = styled.div`
   padding: 10px 1.0875rem 1.45rem;
 
   @media ${device.mobileL} {
-    padding: 40px 1.0875rem 1.45rem;
+    padding: 30px 1.0875rem 1.45rem;
   }
+`;
+
+const TopContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const TextContainer = styled.div`
+  margin: 40px 0;
+  flex-direction: column;
 `;
 
 const Container = styled.div`
@@ -97,25 +159,34 @@ const Heading = styled.h2`
   font-family: Raleway;
 `;
 
-const Grid = styled.div`
-  display: none;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 40px;
+const ServiceItem = styled.div`
+  font-family: Raleway;
+  font-size: 20px;
+  margin: 12px 0;
+  padding: 16px;
+  background-color: ${theme.colors.primaryGreen};
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+`;
 
+const Image = styled.img`
+  width: auto;
+  max-height: 250px;
+  margin: 20px 0 0 60px;
+  border-radius: 2px;
+  display: none;
   @media ${device.tablet} {
-    display: grid;
+    display: block;
   }
 `;
 
-const GridBox = styled.div`
-  border: 6px solid ${theme.colors.primaryGreen};
-  padding: 20px;
-  font-weight: 600;
-  color: ${theme.colors.navy};
-`;
-
-const MobileBox = styled.div`
-  display: flex;
+const InlineImage = styled.img`
+  width: auto;
+  max-height: 250px;
+  border-radius: 2px;
+  display: block;
+  margin: 20px auto;
   @media ${device.tablet} {
     display: none;
   }

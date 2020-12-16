@@ -7,6 +7,8 @@ import LIHeadshot from "../../images/LI_headshot.jpg";
 import MLHeadshot from "../../images/ML_headshot.jpg";
 import CCHeadshot from "../../images/CC_headshot.jpg";
 import HMHeadshot from "../../images/HM_headshot.jpg";
+import MVHeadshot from "../../images/MV_headshot.jpg";
+import AJHeadshot from "../../images/AJ_headshot.jpg";
 
 const AboutUs = () => (
   <Wrapper id="meet-the-team">
@@ -17,15 +19,15 @@ const AboutUs = () => (
         <ImgContainer pictureUrl={TWHeadshot} />
         <TextContainer>
           <p>
-            For nearly three decades, Walsh Consulting founder, Timothy Walsh,
-            has served as Chief Financial Officer for Wenner Media while
-            managing the Wenner family office. Mr. Walsh is a trustee of the
-            family trusts and was a board member of the operating company. His
+            For nearly three decades, Walsh Consulting founder Timothy Walsh has
+            served as Chief Financial Officer for Wenner Media while managing
+            the Wenner family office. Mr. Walsh is a trustee of the family
+            trusts and was a board member of the operating company. His
             wide-ranging experience provides a unique perspective on the
             challenges and opportunities facing wealthy families. Having
             recognized an essential need in the marketplace for customized
             family financial management, Mr. Walsh developed Walsh Consulting.
-            An expert support team has been assembled to provide a full suite of
+            He has assembled an expert support team to provide a full suite of
             services.
           </p>
           <Link
@@ -64,33 +66,43 @@ const AboutUs = () => (
           <p>
             Chris is an accounting professional with experience in financial
             operations for small to mid-sized companies. Over the course of her
-            career she had held positions at large international accounting
-            firms and growing startups, in addition to beginning her own
+            career, she had held positions at large international accounting
+            firms as well as growing startups, in addition to beginning her own
             advisory business.
           </p>
         </TextContainer>
       </Container>
     </BioWrapper>
     <BioWrapper>
-      <SubHeading>Holly MacKenzie, POSITION</SubHeading>
+      <SubHeading>Holly MacKenzie, Head Bookkeeper</SubHeading>
       <Container>
         <ImgContainer pictureUrl={HMHeadshot} />
         <TextContainer>
-          <p></p>
+          <p>
+            Holly is a Personal Executive Assistant/Bookkeeper with extensive
+            experience in QuickBooks. For ten years she managed the personal and
+            business financials for a high profile Patent Attorney, in addition
+            to handling the legal end of his business. During that time, she
+            worked very closely with his accountant and his investment advisors.
+            More recently, Holly has worked for GCA Advisors in New York,
+            supporting three Managing Directors and one Senior Advisor. Holly is
+            a graduate of Pennsylvania State University with a Bachelor of Arts
+            degree.
+          </p>
         </TextContainer>
       </Container>
     </BioWrapper>
     <BioWrapper>
       <SubHeading>Merrill Varchetti, Bookkeeper</SubHeading>
       <Container>
-        {/* <ImgContainer pictureUrl={} /> */}
+        <ImgContainer pictureUrl={MVHeadshot} />
         <TextContainer>
           <p>
-            After 10 years as a stay at home mom, Merrill decided to re-enter
-            the workforce with Walsh Consulting in the fall of 2019. In her
-            spare time, she can be found on the tennis court or traveling back
-            and forth to numerous children’s sporting events including baseball,
-            football, basketball, tennis, and gymnastics.
+            After 10 years as a stay-at-home mom, Merrill decided to re-enter
+            the workforce with Walsh Consulting in the fall of 2019. [ONE
+            SENTENCE OF PREVIOUS EXPERIENCE HERE] In her spare time, she can be
+            found on the tennis court or traveling back and forth to numerous
+            children’s sporting events.
           </p>
         </TextContainer>
       </Container>
@@ -101,25 +113,28 @@ const AboutUs = () => (
         <ImgContainer pictureUrl={MLHeadshot} />
         <TextContainer>
           <p>
-            Melissa Laccitiello is a seasoned Executive Assistant with over 24
-            year’s experience in the field. She is a graduate of Montclair State
-            University, holding a Bachelor of Science degree. She has extensive
-            experience with all administrative tasks including billing and
-            correspondence. Having held positions in the medical and business
-            fields, Melissa is able to tailor her skills to various clients. In
-            addition to her duties as an Executive Assistant, Melissa is married
-            with three children and is active in many organizations in her
-            community.
+            Melissa is a seasoned Executive Assistant with more than 24 years of
+            experience in the field. She is highly adept at administrative tasks
+            including billing and correspondence. Having held positions in the
+            medical and business fields, Melissa is skilled at tailoring her
+            skills to various clients. Melissa is married with three children,
+            and active in many organizations in her community. She is a graduate
+            of Montclair State University, holding a Bachelor of Science degree.
           </p>
         </TextContainer>
       </Container>
     </BioWrapper>
     <BioWrapper>
-      <SubHeading>Aimee Jeffries, POSITION</SubHeading>
+      <SubHeading>Aimee Jeffries, Client Services</SubHeading>
       <Container>
-        {/* <ImgContainer pictureUrl={} /> */}
+        <ImgContainer pictureUrl={AJHeadshot} />
         <TextContainer>
-          <p></p>
+          <p>
+            Aimee brings over a decade of experience managing international
+            licensing and business affairs to her role as Client Services at
+            Walsh Consulting. When she is not making spreadsheets, she enjoys
+            skiing, home renovation projects, and endlessly chasing her toddler.
+          </p>
         </TextContainer>
       </Container>
     </BioWrapper>
