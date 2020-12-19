@@ -99,10 +99,9 @@ const AboutUs = () => (
         <TextContainer>
           <p>
             After 10 years as a stay-at-home mom, Merrill decided to re-enter
-            the workforce with Walsh Consulting in the fall of 2019. [ONE
-            SENTENCE OF PREVIOUS EXPERIENCE HERE] In her spare time, she can be
-            found on the tennis court or traveling back and forth to numerous
-            children’s sporting events.
+            the workforce with Walsh Consulting in the fall of 2019. In her
+            spare time, she can be found on the tennis court or traveling back
+            and forth to numerous children’s sporting events.
           </p>
         </TextContainer>
       </Container>

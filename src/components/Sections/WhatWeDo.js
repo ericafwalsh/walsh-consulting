@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { theme, device } from "../../theme";
 import meetingPhoto from "../../images/meeting_photo.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const services = [
   {
@@ -87,49 +89,81 @@ const services = [
   },
 ];
 
-const WhatWeDo = () => (
-  <Wrapper id="what-we-do">
-    <TopContainer>
-      <TextContainer>
-        <Heading>Family Financial Management</Heading>
-        <p>
-          Tailored to meet the diverse needs of each family client, Walsh
-          Consulting maintains close contact with attorneys, investment
-          advisors, accountants, tax professionals, insurance agents, estate
-          managers, architects, aviation professionals, appraisal firms and
-          more. Personalized service, customized plans and a dedicated team
-          guarantee satisfaction and peace of mind.
-        </p>
-        <p>
-          Successful financial relationships require trust, confidence, loyalty
-          and confidentiality, exactly what you can expect from Walsh
-          Consulting. Advanced technology and superior security measures protect
-          each client’s information.
-        </p>
-        <InlineImage src={meetingPhoto} alt="stock photo of business meeting" />
-        <p>
-          <b>
-            Walsh Consulting Founder and Chief Executive Officer Timothy Walsh
-          </b>{" "}
-          is an accomplished financial executive in the media industry with more
-          than 25 years of experience working for privately held Wenner Media.
-          Mr. Walsh has also managed the Wenner Family Office since 2000. He
-          served as the company’s Chief Financial Officer, Vice President,
-          Treasurer and Board Member of Rolling Stone Magazine. Prior to that,
-          he was Wenner Media’s Vice President of Tax and Finance (2004-14). He
-          began his career with Wenner Media as Tax Director (1991).
-        </p>
-      </TextContainer>
-      <Image src={meetingPhoto} alt="stock photo of business meeting" />
-    </TopContainer>
-    <Container>
-      <Heading>Services</Heading>
-      {services.map((item) => {
-        return <ServiceItem>{item.title}</ServiceItem>;
-      })}
-    </Container>
-  </Wrapper>
-);
+const WhatWeDo = () => {
+  const [itemVisible, setItemVisible] = useState(null);
+
+  const toggleAccordian = (idx) => {
+    setItemVisible(itemVisible === idx ? null : idx);
+  };
+
+  return (
+    <Wrapper id="what-we-do">
+      <TopContainer>
+        <TextContainer>
+          <Heading>Family Financial Management</Heading>
+          <p>
+            Tailored to meet the diverse needs of each family client, Walsh
+            Consulting maintains close contact with attorneys, investment
+            advisors, accountants, tax professionals, insurance agents, estate
+            managers, architects, aviation professionals, appraisal firms and
+            more. Personalized service, customized plans and a dedicated team
+            guarantee satisfaction and peace of mind.
+          </p>
+          <p>
+            Successful financial relationships require trust, confidence,
+            loyalty and confidentiality, exactly what you can expect from Walsh
+            Consulting. Advanced technology and superior security measures
+            protect each client’s information.
+          </p>
+          <InlineImage
+            src={meetingPhoto}
+            alt="stock photo of business meeting"
+          />
+          <GreenAccent>
+            <p>
+              <b>
+                Walsh Consulting Founder and Chief Executive Officer Timothy
+                Walsh
+              </b>{" "}
+              is an accomplished financial executive in the media industry with
+              more than 25 years of experience working for privately held Wenner
+              Media. Mr. Walsh has also managed the Wenner Family Office since
+              2000. He served as the company’s Chief Financial Officer, Vice
+              President, Treasurer and Board Member of Rolling Stone Magazine.
+              Prior to that, he was Wenner Media’s Vice President of Tax and
+              Finance (2004-14). He began his career with Wenner Media as Tax
+              Director (1991).
+            </p>
+          </GreenAccent>
+        </TextContainer>
+        <Image src={meetingPhoto} alt="stock photo of business meeting" />
+      </TopContainer>
+      <Container>
+        <Heading>Services</Heading>
+        {services.map((item, idx) => {
+          const { title, description } = item;
+          return (
+            <ServiceContainer>
+              <ServiceItem key={idx} onClick={() => toggleAccordian(idx)}>
+                {title}
+                <FontAwesomeIcon
+                  icon={itemVisible === idx ? faChevronUp : faChevronDown}
+                />
+              </ServiceItem>
+              <ServiceItemDescription visible={itemVisible === idx}>
+                <ul>
+                  {description.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              </ServiceItemDescription>
+            </ServiceContainer>
+          );
+        })}
+      </Container>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -159,15 +193,27 @@ const Heading = styled.h2`
   font-family: Raleway;
 `;
 
+const ServiceContainer = styled.div`
+  overflow: hidden;
+`;
+
 const ServiceItem = styled.div`
   font-family: Raleway;
   font-size: 20px;
   margin: 12px 0;
-  padding: 16px;
+  padding: 16px 30px 16px 16px;
   background-color: ${theme.colors.primaryGreen};
   color: white;
   cursor: pointer;
   border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const ServiceItemDescription = styled.div`
+  max-height: ${(props) => (props.visible ? "600px" : `0`)};
+  transition: max-height 0.4s ease-in-out;
 `;
 
 const Image = styled.img`
@@ -190,6 +236,12 @@ const InlineImage = styled.img`
   @media ${device.tablet} {
     display: none;
   }
+`;
+
+const GreenAccent = styled.div`
+  border-left: 6px solid ${theme.colors.primaryGreen};
+  border-radius: 2px;
+  padding-left: 20px;
 `;
 
 export default WhatWeDo;

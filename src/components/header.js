@@ -4,16 +4,8 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { theme, device } from "../theme";
 import { scrollTo } from "../components/utils/scroll";
-
-const renderHamburgerIcon = () => {
-  return (
-    <svg viewBox="0 0 100 80" width="35" height="35">
-      <rect width="100" height="13"></rect>
-      <rect y="30" width="100" height="13"></rect>
-      <rect y="60" width="100" height="13"></rect>
-    </svg>
-  );
-};
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const renderNavItems = () => {
   return (
@@ -21,15 +13,29 @@ const renderNavItems = () => {
       <NavItem onClick={() => scrollTo("what-we-do", "center", true, 95)}>
         What We Do
       </NavItem>
+      <Divider />
       <NavItem onClick={() => scrollTo("meet-the-team", "center", true, 110)}>
         Meet the Team
       </NavItem>
+      <Divider />
       <NavItem onClick={() => scrollTo("testimonials", "center", true, 110)}>
         Testimonials
       </NavItem>
-      <NavItem onClick={() => scrollTo("contact-us", "center", true, 110)}>
+      <Divider />
+      <ContactNavItem
+        onClick={() => scrollTo("contact-us", "center", true, 110)}
+      >
         Contact Us
-      </NavItem>
+      </ContactNavItem>
+      <Divider />
+      <IconWrapper>
+        <MobileLink href="mailto:tim@walsh.consulting">
+          <ContactInfo>Tim@walsh.consulting</ContactInfo>
+        </MobileLink>
+        <MobileLink href="tel:+9173042597">
+          <ContactInfo>(917) 304-2597</ContactInfo>
+        </MobileLink>
+      </IconWrapper>
     </>
   );
 };
@@ -47,7 +53,7 @@ const Header = ({ siteTitle }) => {
         </Name>
         <NavItems>{renderNavItems()}</NavItems>
         <Hamburger onClick={() => setDropdownVisible(!dropdownVisible)}>
-          {renderHamburgerIcon()}
+          <FontAwesomeIcon size="2x" icon={faBars} color="#040404" />
           {dropdownVisible && (
             <Dropdown className="dropdown">{renderNavItems()}</Dropdown>
           )}
@@ -72,9 +78,9 @@ const NavBar = styled.header`
   top: 0;
   background-color: white;
   z-index: 100;
-  height: 120px;
+  height: 80px;
 
-  @media ${device.mobileM} {
+  @media ${device.tablet} {
     height: 95px;
   }
 `;
@@ -96,6 +102,8 @@ const Name = styled.p`
   font-size: 28px;
   line-height: 40px;
 
+  display: none;
+
   @media ${device.mobileM} {
     font-size: 34px;
   }
@@ -103,10 +111,14 @@ const Name = styled.p`
   @media ${device.laptop} {
     font-size: 41px;
   }
+
+  @media ${device.mobileS} {
+    display: block;
+  }
 `;
 
 const SLink = styled(Link)`
-  color: #040404;
+  color: ${theme.colors.primaryBlack};
   text-decoration: none;
 `;
 
@@ -116,26 +128,28 @@ const NavItems = styled.div`
   flex-wrap: nowrap;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  @media ${device.laptop} {
-    font-size: 18px;
-  }
+  font-size: 20px;
+
   @media ${device.tablet} {
     display: flex;
   }
 `;
 
 const NavItem = styled.div`
-  color: #040404;
+  color: white;
   padding-left: 20px;
   flex-wrap: nowrap;
   cursor: pointer;
+
+  @media ${device.tablet} {
+    color: ${theme.colors.primaryBlack};
+  }
 `;
 
 const Hamburger = styled.div`
   display: flex;
   align-self: flex-end;
-  margin-left: 16px;
+  margin-bottom: 16px;
   cursor: pointer;
   overflow: hidden;
 
@@ -146,13 +160,55 @@ const Hamburger = styled.div`
 
 const Dropdown = styled.div`
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
+  background-color: ${theme.colors.primaryBlack};
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0;
-  top 68px;
+  top 80px;
   padding: 10px 0;
+  width: 100%;
+  height: auto;
+  font-size: 28px;
+  line-height: 100px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+`;
+
+const Divider = styled.div`
+  border: 0.5px solid ${theme.colors.primaryGreen};
+  display: block;
+
+  @media ${device.tablet} {
+    display: none;
+  }
+`;
+
+const IconWrapper = styled.div`
+  display: block;
+  padding: 20px;
+
+  @media ${device.tablet} {
+    display: none;
+  }
+`;
+
+const MobileLink = styled.a`
+  line-height: 30px;
+  font-size: 18px;
+  color: white;
+  &:active {
+    color: ${theme.colors.primaryGreen};
+  }
+`;
+
+const ContactInfo = styled.div``;
+
+const ContactNavItem = styled(NavItem)`
+  display: none;
+
+  @media ${device.tablet} {
+    display: block;
+  }
 `;
 
 export default Header;
