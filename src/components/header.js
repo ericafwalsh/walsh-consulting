@@ -32,7 +32,7 @@ const renderNavItems = () => {
         <MobileLink href="mailto:tim@walsh.consulting">
           <ContactInfo>Tim@walsh.consulting</ContactInfo>
         </MobileLink>
-        <MobileLink href="tel:+9173042597">
+        <MobileLink href="tel:+1-917-304-2597">
           <ContactInfo>(917) 304-2597</ContactInfo>
         </MobileLink>
       </IconWrapper>

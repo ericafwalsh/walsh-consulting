@@ -151,11 +151,11 @@ const WhatWeDo = () => {
                 />
               </ServiceItem>
               <ServiceItemDescription visible={itemVisible === idx}>
-                <ul>
+                <BulletedList visible={itemVisible === idx}>
                   {description.map((bullet) => (
                     <li>{bullet}</li>
                   ))}
-                </ul>
+                </BulletedList>
               </ServiceItemDescription>
             </ServiceContainer>
           );
@@ -242,6 +242,10 @@ const GreenAccent = styled.div`
   border-left: 6px solid ${theme.colors.primaryGreen};
   border-radius: 2px;
   padding-left: 20px;
+`;
+
+const BulletedList = styled.ul`
+  display: ${(props) => (props.visible ? `block` : `none`)};
 `;
 
 export default WhatWeDo;

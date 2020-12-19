@@ -32,7 +32,7 @@ const Contact = () => {
         <DesktopPhoneNumber>
           <ContactInfo>(917) 304-2597</ContactInfo>
         </DesktopPhoneNumber>
-        <MobilePhoneNumber href="tel:+9173042597">
+        <MobilePhoneNumber href="tel:+1-917-304-2597">
           <ContactInfo>(917) 304-2597</ContactInfo>
         </MobilePhoneNumber>
         <Dot>&#8226;</Dot>
