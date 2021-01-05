@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { theme, device } from "../../theme";
-import meetingPhoto from "../../images/meeting_photo.jpg";
+import meetingPhoto from "../../images/meeting_photo_2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,82 +9,71 @@ const services = [
   {
     title: "Bill Payment, Reporting & Budgeting",
     description: [
-      "Process all invoices",
-      "Review cash inflows and outflows",
-      "Account for all your spending",
-      "Generate quarterly spending reports to determine if your spending is in line with projections and if changes are needed",
+      "Process invoices",
+      "Review and reconcile all cash inflows and outflows",
+      "Generate quarterly reports to determine if spending is in line with projections",
     ],
   },
   {
     title: "Banking & Cash Management",
     description: [
-      "Open and close accounts",
-      "Transfer funds between accounts",
-      "Reconcile accounts at month-end",
-      "Review cash inflows and outflows",
-    ],
-  },
-  {
-    title: "Payroll Processing",
-    description: [
-      "Process payroll for your staff",
-      "Purchase unemployment, disability and paid family leave insurance",
-      "Maintain all employment documents",
-      "Work with an outsource provider to ensure you comply with all employment laws",
-    ],
-  },
-  {
-    title: "Income Tax Preparation",
-    description: [
-      "Prepare individual income tax returns",
-      "Calculate quarterly estimated payments",
-      "Manage tax audits",
-      "Respond to all tax notices",
-    ],
-  },
-  {
-    title: "Coordination of Estate Planning, Wills, Trusts",
-    description: [
-      "Work with our estate attorneys to ensure that your will and estate plans are in order",
-      "Ensure all tax exemptions are utilized",
-      "Verify state tax is minimized",
-      "Confirm trust provisions are complied with",
-      "Ensure that you understand and are comfortable with your distribution of assets",
+      "Manage all banking relationships",
+      "Establish credit facilities including lines of credit, mortgages, and margin loans",
     ],
   },
   {
     title: "Investment Management",
     description: [
+      "Meet with investment team quarterly to assess performance",
       "Review investment recommendations",
-      "Complete investment documents",
-      "Report to you quarterly",
-      "Assist with selection of investment advisors, if needed",
+      "Confirm investment allocation is in line with family objectives",
+      "Assist with selection of new investment advisors when needed",
     ],
   },
   {
-    title: "Property, Aviation, Artwork Management",
+    title: "Payroll Processing",
     description: [
-      "Maintain a database of your artwork",
-      "Have the collection appraised periodically",
-      "Review all contracts",
-      "Maintain automobile schedules to ensure that all autos are properly insured, inspected and registered",
-      "Assist with booking charter flights, purchasing automobiles, boats, etc.",
+      "Process household payroll",
+      "Ensure all employment practices comply with state and federal laws",
+      "Manage workers comp, disability, and other employment requirements",
+    ],
+  },
+  {
+    title: "Income Tax Preparation",
+    description: [
+      "Prepare individual, partnership, S corporation, trust, and individual income tax returns",
+      "Tax planning to minimize client’s federal and state income tax burden",
+      "Manage tax audits and calculate quarterly estimated payments",
+    ],
+  },
+  {
+    title: "Coordination of Estate Planning, Wills, Trusts",
+    description: [
+      "Work with an estate attorney to design and implement an estate plan that minimizes federal and state transfer taxes",
+      "Create trust structure for multi-generational wealth transfer and oversight",
+      "Ensure principals understand and are comfortable with their estate plan",
+    ],
+  },
+  {
+    title: "Property, Aviation, Artwork Management, Construction",
+    description: [
+      "Maintain artwork database and have the collection appraised periodically",
+      "Review all family contracts including asset purchases, maintenance agreements, leases, etc.",
+      "Construction finance oversight",
     ],
   },
   {
     title: "Insurance Administration",
     description: [
-      "Verify that you are properly insured for your homes, artwork, furnishings, autos and excess liability",
-      "Make sure all new items are added to the policies",
-      "Coordinate insurance company inspections",
-      "Bid out the policies periodically",
+      "Verify that all family assets are properly insured at a competitive price including homes, automobiles, artwork, and furnishings",
+      "Ensure proper excess liability coverage is maintained and that procedures are in place to add future purchases",
     ],
   },
   {
     title: "Data Management & Protection",
     description: [
-      "Maintain your documents in a secure, cloud-based environment (i.e., wills, trusts, contracts, entity organizational documents, passports, personal ID’s) ",
-      "Maintain logins for all investments, insurance, utilities, banking, credit cards, etc. in a fully encrypted password management system",
+      "Maintain all documents in a secure, cloud-based environment",
+      "Maintain logins for all investments, insurance, banking, etc., in a fully encrypted password management system",
     ],
   },
 ];
@@ -147,7 +136,8 @@ const WhatWeDo = () => {
               <ServiceItem key={idx} onClick={() => toggleAccordian(idx)}>
                 {title}
                 <FontAwesomeIcon
-                  icon={itemVisible === idx ? faChevronUp : faChevronDown}
+                  icon={faChevronUp}
+                  className={itemVisible === idx ? "item-open" : "item-closed"}
                 />
               </ServiceItem>
               <ServiceItemDescription visible={itemVisible === idx}>
@@ -199,9 +189,9 @@ const ServiceContainer = styled.div`
 
 const ServiceItem = styled.div`
   font-family: Raleway;
-  font-size: 20px;
-  margin: 12px 0;
-  padding: 16px 30px 16px 16px;
+  font-size: 17px;
+  margin: 8px 0;
+  padding: 10px 30px 10px 16px;
   background-color: ${theme.colors.primaryGreen};
   color: white;
   cursor: pointer;
@@ -209,6 +199,16 @@ const ServiceItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .item-closed {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-out;
+  }
+
+  .item-open {
+    transform: rotate(-180deg);
+    transition: transform 0.3s;
+  }
 `;
 
 const ServiceItemDescription = styled.div`

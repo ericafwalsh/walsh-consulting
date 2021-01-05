@@ -9,6 +9,7 @@ import CCHeadshot from "../../images/CC_headshot.jpg";
 import HMHeadshot from "../../images/HM_headshot.jpg";
 import MVHeadshot from "../../images/MV_headshot.jpg";
 import AJHeadshot from "../../images/AJ_headshot.jpg";
+import CV from "../../../static/Timothy_M_Walsh_CV.pdf";
 
 const AboutUs = () => (
   <Wrapper id="meet-the-team">
@@ -19,23 +20,19 @@ const AboutUs = () => (
         <ImgContainer pictureUrl={TWHeadshot} />
         <TextContainer>
           <p>
-            For nearly three decades, Walsh Consulting founder Timothy Walsh has
-            served as Chief Financial Officer for Wenner Media while managing
-            the Wenner family office. Mr. Walsh is a trustee of the family
-            trusts and was a board member of the operating company. His
-            wide-ranging experience provides a unique perspective on the
-            challenges and opportunities facing wealthy families. Having
-            recognized an essential need in the marketplace for customized
-            family financial management, Mr. Walsh developed Walsh Consulting.
-            He has assembled an expert support team to provide a full suite of
-            services.
+            For nearly three decades, Walsh Consulting founder Timothy Walsh
+            served in numerous financial roles at Wenner Media, culminating in
+            the role of Chief Financial Officer. During this period, Mr. Walsh
+            also managed the Wenner family office, was a trustee of numerous
+            family trusts, and was a board member of the operating company. His
+            wide- ranging experience provides a unique perspective on the
+            challenges and opportunities facing high-net-worth families and
+            their closely held entities. Recognizing an essential need in the
+            marketplace for customized family financial management, Mr. Walsh
+            founded Walsh Consulting. He has assembled an expert support team to
+            provide a full suite of services.
           </p>
-          <Link
-            href={"./Timothy_M_Walsh_CV.pdf"}
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href={CV} download target="_blank" rel="noopener noreferrer">
             Download CV
           </Link>
         </TextContainer>
@@ -48,12 +45,15 @@ const AboutUs = () => (
         <TextContainer>
           <p>
             Lana is a CPA with more than 20 years of experience in providing tax
-            compliance and tax return preparation services to family offices,
-            high net worth individuals, trusts, and closely held businesses.
-            Lana also handles non-tax wealth management services including the
-            shareholders'/owners’ personal finances, tax projections, cash flow
-            management, financial statements, trust accounting and
-            distributions, family foundations.
+            compliance services to family offices, high net worth individuals,
+            trusts, and closely held businesses. Lana also handles non-tax
+            wealth management services including the shareholders’ personal
+            finances, tax projections, cash flow management, financial statement
+            preparation, trust accounting, and family foundations.
+          </p>
+          <p>
+            Lana is a graduate of Baruch College in New York with an MBA in
+            accounting.
           </p>
         </TextContainer>
       </Container>
@@ -64,11 +64,17 @@ const AboutUs = () => (
         <ImgContainer pictureUrl={CCHeadshot} />
         <TextContainer>
           <p>
-            Chris is an accounting professional with experience in financial
-            operations for small to mid-sized companies. Over the course of her
-            career, she had held positions at large international accounting
-            firms as well as growing startups, in addition to beginning her own
+            Chris is an accounting professional with over a decade of experience
+            in financial operations for a variety of companies. Chris started
+            her career at Arthur Andersen, and then worked for a large
+            pharmaceutical company before concentrating her skills on small and
+            mid-sized clients. She also built and managed her own financial
             advisory business.
+          </p>
+          <p>
+            Chris is a graduate of the Robins School of Business, University of
+            Richmond, with a Bachelor of Science degree in business
+            administration.
           </p>
         </TextContainer>
       </Container>
@@ -81,13 +87,17 @@ const AboutUs = () => (
           <p>
             Holly is a Personal Executive Assistant/Bookkeeper with extensive
             experience in QuickBooks. For ten years she managed the personal and
-            business financials for a high profile Patent Attorney, in addition
-            to handling the legal end of his business. During that time, she
-            worked very closely with his accountant and his investment advisors.
+            business affairs for a high net-worth individual and his closely
+            held business. During that time, she worked very closely with his
+            accountants, attorneys, and investment advisors.
+          </p>
+          <p>
             More recently, Holly has worked for GCA Advisors in New York,
-            supporting three Managing Directors and one Senior Advisor. Holly is
-            a graduate of Pennsylvania State University with a Bachelor of Arts
-            degree.
+            supporting three Managing Directors and one Senior Advisor.
+          </p>
+          <p>
+            Holly is a graduate of Pennsylvania State University with a Bachelor
+            of Arts degree.
           </p>
         </TextContainer>
       </Container>
@@ -98,10 +108,15 @@ const AboutUs = () => (
         <ImgContainer pictureUrl={MVHeadshot} />
         <TextContainer>
           <p>
-            After 10 years as a stay-at-home mom, Merrill decided to re-enter
-            the workforce with Walsh Consulting in the fall of 2019. In her
-            spare time, she can be found on the tennis court or traveling back
-            and forth to numerous children’s sporting events.
+            Merrill is a Bookkeeper with several years of experience at Walsh
+            Consulting. She has direct contact with many of our most important
+            clients and is responsible for the recording of all transactions,
+            reconciling bank accounts, and preparing financial statements.
+          </p>
+          <p>
+            Prior to joining Walsh Consulting, Merrill worked for an insurance
+            company. She is extremely organized, efficient, and brings a strong
+            work ethic to all her assignments.
           </p>
         </TextContainer>
       </Container>
@@ -112,13 +127,15 @@ const AboutUs = () => (
         <ImgContainer pictureUrl={MLHeadshot} />
         <TextContainer>
           <p>
-            Melissa is a seasoned Executive Assistant with more than 24 years of
-            experience in the field. She is highly adept at administrative tasks
+            Melissa is a seasoned Executive Assistant/Bookkeeper with more than
+            24 years of experience. She is highly adept at administrative tasks
             including billing and correspondence. Having held positions in the
-            medical and business fields, Melissa is skilled at tailoring her
-            skills to various clients. Melissa is married with three children,
-            and active in many organizations in her community. She is a graduate
-            of Montclair State University, holding a Bachelor of Science degree.
+            medical and business fields, Melissa has the fine ability to tailor
+            her considerable skills to meet each client’s needs.
+          </p>
+          <p>
+            She is a graduate of Montclair State University, holding a Bachelor
+            of Science degree in health education.
           </p>
         </TextContainer>
       </Container>
@@ -130,9 +147,13 @@ const AboutUs = () => (
         <TextContainer>
           <p>
             Aimee brings over a decade of experience managing international
-            licensing and business affairs to her role as Client Services at
-            Walsh Consulting. When she is not making spreadsheets, she enjoys
-            skiing, home renovation projects, and endlessly chasing her toddler.
+            licensing and business affairs for a closely held publishing
+            company. She currently manages payroll and other special projects at
+            Walsh Consulting.
+          </p>
+          <p>
+            Aimee is a graduate of Colorado College with a Bachelor of Arts
+            degree in english.
           </p>
         </TextContainer>
       </Container>
